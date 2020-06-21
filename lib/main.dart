@@ -50,13 +50,40 @@ class RandomWorldState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       // Canvan - barra de titulo añadir botones etc
       appBar: AppBar(
         title: Text('Welcome to flutter'),
+        actions: <Widget>[
+          FlatButton.icon(onPressed: _pushSaved , icon: Icon(Icons.list), label: Icon(Icons.favorite, color: Colors.red,),)
+        ],
       ),
       body: _buildSuggestions(),
     );
+  }
+
+  void _pushSaved(){
+
+    // This method push the new route page thast we will construct
+    Navigator.of(context).push(MaterialPageRoute( builder: (context) {
+          final tiles = _saved.map((pair)  {
+              return ListTile(
+                title: Text(
+                  pair.asPascalCase,
+                  style: _biggerFont
+                ),
+          );
+          });
+
+          final divided = ListTile.divideTiles(context: context, tiles: tiles).toList();
+
+          return Scaffold(
+            appBar: AppBar(title: Text('Sugerencias guardadas')),
+            body: ListView(children: divided),
+          );
+
+      }));
   }
 
   Widget _buildSuggestions() {
@@ -83,7 +110,6 @@ class RandomWorldState extends State<RandomWords> {
   Widget _buildRow(WordPair suggestion) {
 
     final alreadySaved = _saved.contains(suggestion);
-
 
     return ListTile(
       title: Text(
