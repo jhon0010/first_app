@@ -2,13 +2,28 @@ import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget {
 
+  String namePlace;
+  String description;
+  int starts;
+
+  DescriptionPlace(this.namePlace,this.description,this.starts);
+
   @override
   Widget build(BuildContext context) {
+
+    final start_border = Container(
+      margin: EdgeInsets.only(top: 323.0, right: 0.5 ),
+      child: Icon(Icons.star_border, color: Colors.amberAccent,),
+    );
+
+    final start_half = Container(
+        margin: EdgeInsets.only(top: 323.0, right: 0.5 ),
+        child: Icon(Icons.star_half, color: Colors.amberAccent,),
+    );
 
     final start = Container(
       margin: EdgeInsets.only(top: 323.0, right: 0.5 ),
       child: Icon(Icons.star, color: Colors.amberAccent,), // you can create Color(HEXA_CODE)
-
     );
 
     final tittle_starts = Row(
@@ -20,8 +35,9 @@ class DescriptionPlace extends StatelessWidget {
             right: 40.0
           ),
           child: Text(
-              'Duwili Ella',
+            namePlace,
             style: TextStyle(
+              fontFamily: 'piedra',
               fontSize: 30.0,
               fontWeight: FontWeight.w900
             ),
@@ -34,23 +50,22 @@ class DescriptionPlace extends StatelessWidget {
             start,
             start,
             start,
-            start,
+            start_border,
           ],
         ),
       ],
     );
 
 
-    final description = Container(
+    final descriptionWidget = Container(
       height: 100.0,
       margin: EdgeInsets.all(20.0),
       child: SingleChildScrollView(
         child: Text(
-          'Incididunt fugiat irure voluptate officia dolor. Sit pariatur consequat adipisicing officia ex qui Lorem. Proident nisi labore nulla mollit. Fugiat esse et veniam cillum aliqua cillum ea culpa consequat culpa nostrud qui exercitation est. Deserunt adipisicing labore velit id est. Ullamco incididunt labore do nostrud deserunt ut irure elit. Labore dolore consectetur excepteur consectetur adipisicing excepteur ullamco fugiat consequat consequat aute.',
+          description,
           style: const TextStyle(
+            fontFamily: 'lobster',
             fontSize: 16.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.black38
         ),
         ),
       ),
@@ -59,7 +74,7 @@ class DescriptionPlace extends StatelessWidget {
     return Column(
       children: [
         tittle_starts,
-        description,
+        descriptionWidget,
       ],
     );
 
