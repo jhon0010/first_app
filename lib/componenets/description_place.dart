@@ -1,3 +1,4 @@
+import 'package:firstapp/componenets/button_ink_widget.dart';
 import 'package:flutter/material.dart';
 
 class DescriptionPlace extends StatelessWidget {
@@ -58,8 +59,8 @@ class DescriptionPlace extends StatelessWidget {
 
 
     final descriptionWidget = Container(
-      height: 100.0,
-      margin: EdgeInsets.all(20.0),
+      height: 200.0,
+      margin: EdgeInsets.only(left: 20, top: 10, right: 20),
       child: SingleChildScrollView(
         child: Text(
           description,
@@ -72,9 +73,11 @@ class DescriptionPlace extends StatelessWidget {
     );
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         tittle_starts,
         descriptionWidget,
+        ButtonInk('Site Reference'),
       ],
     );
 
