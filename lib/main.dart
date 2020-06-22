@@ -1,7 +1,8 @@
+import 'package:firstapp/componenets/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-import 'ListFavorites.dart';
+import 'componenets/ListFavorites.dart';
 
 void main() => runApp(Favorite());
 
@@ -14,7 +15,8 @@ class Favorite extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Welcome to flutter',
       theme: ThemeData(primaryColor: Colors.green),
-      home: FavoriteList(),
+//      home: FavoriteList(),
+      home: HomeStateless(),
     );
   }
 

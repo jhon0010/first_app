@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../ListFavorites.dart';
+import '../componenets/ListFavorites.dart';
 
 void main() => runApp(ForEachExample());
 
