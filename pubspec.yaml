@@ -42,6 +42,10 @@ flutter:
   assets:
     - assets/images/back.jpg
     - assets/images/person.jpg
+    - assets/images/beach.jpg
+    - assets/images/city.jpeg
+    - assets/images/mountain.jpeg
+    - assets/images/traveler.jpg
   fonts:
     - family: pangoling
     - fonts:

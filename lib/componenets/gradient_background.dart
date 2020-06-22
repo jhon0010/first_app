@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 class GradientBackground extends StatelessWidget {
 
+  String tittle = 'Popular';
+
+  GradientBackground(this.tittle);
+
   @override
   Widget build(BuildContext context) {
 
@@ -19,6 +23,16 @@ class GradientBackground extends StatelessWidget {
           tileMode: TileMode.clamp
         ),
       ),
+      child: Text(
+          tittle,
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 30.0,
+          fontFamily: "piedra",
+          fontWeight: FontWeight.w900
+        ),
+      ),
+      alignment: Alignment(-0.9, -0.6), // about text
     );
   }
 

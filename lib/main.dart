@@ -1,4 +1,5 @@
 import 'package:firstapp/componenets/gradient_background.dart';
+import 'package:firstapp/componenets/header_card_images_app_bar.dart';
 import 'package:firstapp/componenets/home_background.dart';
 import 'package:firstapp/componenets/description_place.dart';
 import 'package:firstapp/componenets/review_list.dart';
@@ -33,7 +34,7 @@ class Favorite extends StatelessWidget {
                   ReviewList(),
                 ],
               ),
-              GradientBackground(),
+              HeaderImages()
             ],
           ),
 
